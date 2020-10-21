@@ -7,14 +7,18 @@
   "type": "module",
   "scripts": {
     "keepalive": "echo \"Docker image ready for shell access.\" && tail -f /dev/null",
-    "node_modules": "mkdir -p /tmp/node_modules && ln -sTf /tmp/node_modules",
+    "node_modules": "mkdir -p /tmp/node_modules && ln -sTf /tmp/node_modules ./node_modules",
     "clean": "rm -Rf ./node_modules/* ./node_modules/.* .yarn yarn.lock ./target",
     "release": "cargo build --release",
     "build": "cargo build",
-    "start": "cargo run"
+    "start": "cargo run",
+    "wasm:build": "wasm-pack build",
+    "wasm:init": "npm init wasm-app www",
+    "wasm:start": "yarn workspace www start"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "www"
   ],
   "devDependencies": {
     "eslint": "7.11.0",

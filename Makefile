@@ -54,7 +54,7 @@ up: HOST_OS ?= $(shell uname -s)}
 up: HOST_HOME ?= $(HOME)
 up: 
 	@docker run -dt --restart unless-stopped --name $(NAME) \
-		-p 3000:3000 \
+		-p 8080:8080 \
 	    --mount source=$(NAME).vscode-server,target=/tmp/.vscode-server \
 	    --mount source=$(NAME).node_modules,target=/tmp/node_modules \
 	    --mount type=bind,src=$(HOST_HOME)/Code,dst=/code \
