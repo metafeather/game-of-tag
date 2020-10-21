@@ -77,6 +77,9 @@ RUN rustup update
 FROM rust AS dev
 USER root
 
+# Allow non-root use of rustup
+RUN chown -R node: ${RUSTUP_HOME} ${CARGO_HOME}
+
 # Do not run node_modules as root user!
 ENV USER node
 USER node

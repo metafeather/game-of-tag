@@ -36,6 +36,7 @@
         "wix.vscode-import-cost",
         "octref.vetur",
         "auchenberg.vscode-browser-preview",
+        "rust-lang.rust"
       ]
     }
   }
