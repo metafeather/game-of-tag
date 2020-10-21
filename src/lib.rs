@@ -223,3 +223,6 @@ impl fmt::Display for Universe {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod lib_tests;

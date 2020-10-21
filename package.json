@@ -13,6 +13,7 @@
     "test": "cargo test",
     "build": "cargo build",
     "start": "cargo run",
+    "bin:build": "cargo build --bin main",
     "wasm:test": "wasm-pack test --headless --chrome -- --verbose",
     "wasm:build": "wasm-pack build && yarn workspace www install",
     "wasm:start": "yarn workspace www start"
