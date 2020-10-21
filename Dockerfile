@@ -1,5 +1,7 @@
-ARG NODE_VERSION="14.11.0-alpine3.12"
-ARG RUST_VERSION="1.47.0-alpine3.12"
+# ref: https://github.com/nodejs/docker-node/blob/7b11db1cab459beb96448e18ec421ec952fa0491/14/buster-slim/Dockerfile
+ARG NODE_VERSION="14.14.0-buster-slim"
+# ref: https://github.com/rust-lang/docker-rust/blob/a5896ce68cee87e80a44d078afbf05d5b679cdbc/1.47.0/buster/slim/Dockerfile
+ARG RUST_VERSION="1.47.0-slim-buster"
 
 FROM node:${NODE_VERSION} AS node
 
@@ -54,22 +56,28 @@ RUN yarn install
 FROM root AS rust
 USER root
 
-RUN apk add --no-cache \
-        ca-certificates \
-        gcc
-
-RUN apk -q add --update --no-cache \
-    --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
-    git less openssl \
-    rustup
-
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:$PATH
-    
-# Get latest rust
-RUN rustup-init -y
-RUN rustup update
+
+RUN apt-get update; \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    pkg-config \
+    ca-certificates \
+    libssl-dev \
+    curl \
+    git \
+    less \
+    ;
+
+# Get Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+
+# Global crates
+# NOTE: wasm-pack segfaults on alpine
+# ref: https://github.com/rustwasm/wasm-pack/issues/917
+RUN cargo install wasm-pack
 
 ############################
 # Node app dev env
