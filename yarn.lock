@@ -105,9 +105,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 14.14.0
-  resolution: "@types/node@npm:14.14.0"
-  checksum: 5ebd04788f3e800914d45de32f5007dc688ca0e6d3424910949be50cf2cf1a5048cc11093771a23d211b8c7ea46ebed91db0e586d491c82df91de422b2eabbab
+  version: 14.14.1
+  resolution: "@types/node@npm:14.14.1"
+  checksum: 6e17842ab09fd128f1bef254f2d4bae9bd30a8c9fbaa10c28062726faa7805c0d48ccda0f5ea45db8ecf107ec92b9ab754849c37d0f422c20793e90ddc0b62fc
   languageName: node
   linkType: hard
 
@@ -6524,8 +6524,8 @@ fsevents@~2.1.2:
 
 "wasm-game-of-tag@file:../pkg::locator=www%40workspace%3Awww":
   version: 0.1.0
-  resolution: "wasm-game-of-tag@file:../pkg#../pkg::hash=92fc16&locator=www%40workspace%3Awww"
-  checksum: 36c9f8caa05828e61ab1060556953e0f45ee0b523bdf3a6e42c5af7504fcdab017feddf0c027315924b56ce600f2812508b74ca79c103d63b4b1ca297117f32b
+  resolution: "wasm-game-of-tag@file:../pkg#../pkg::hash=2a8fa4&locator=www%40workspace%3Awww"
+  checksum: 5e28f0115c3b8443826f1e7b335a06adf2e48c1ba6813d0b7cbd7e32cb169bc9c78420f1a0bd94925378904af2d0f10b7617625fc9e623b405da58bbe57e1e97
   languageName: node
   linkType: hard
 

@@ -1,6 +1,6 @@
 {
   "name": "@hash.ai/game_of_tag",
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Game of Tag",
   "author": "Liam Clancy (metafeather)",
   "private": true,
@@ -8,16 +8,16 @@
   "scripts": {
     "keepalive": "echo \"Docker image ready for shell access.\" && tail -f /dev/null",
     "node_modules": "mkdir -p /tmp/node_modules && ln -sTf /tmp/node_modules ./node_modules",
-    "clean": "rm -Rf ./node_modules/* ./node_modules/.* .yarn yarn.lock ./target",
+    "clean": "rm -Rf ./node_modules/* ./node_modules/.* .yarn yarn.lock",
     "release": "cargo build --release",
+    "test": "cargo test",
     "build": "cargo build",
     "start": "cargo run",
-    "wasm:build": "wasm-pack build",
-    "wasm:init": "npm init wasm-app www",
+    "wasm:test": "wasm-pack test --headless --chrome -- --verbose",
+    "wasm:build": "wasm-pack build && yarn workspace www install",
     "wasm:start": "yarn workspace www start"
   },
   "workspaces": [
-    "packages/*",
     "www"
   ],
   "devDependencies": {

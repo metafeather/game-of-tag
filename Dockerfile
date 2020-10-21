@@ -62,13 +62,11 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 
 RUN apt-get update; \
     apt-get install -y --no-install-recommends \
-    build-essential \
-    pkg-config \
-    ca-certificates \
-    libssl-dev \
+    build-essential pkg-config \
+    ca-certificates libssl-dev \
+    libnss3-dev libgconf-2-4 xvfb \
     curl \
-    git \
-    less \
+    git less \
     ;
 
 # Get Rust
