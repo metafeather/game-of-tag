@@ -1,0 +1,26 @@
+{
+  "name": "@hash.ai/game_of_tag",
+  "version": "2.0.0",
+  "description": "Game of Tag",
+  "author": "Liam Clancy (metafeather)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "keepalive": "echo \"Docker image ready for shell access.\" && tail -f /dev/null",
+    "node_modules": "mkdir -p /tmp/node_modules && ln -sTf /tmp/node_modules",
+    "clean": "rm -Rf ./node_modules/* ./node_modules/.* .yarn yarn.lock ./target",
+    "release": "cargo build --release",
+    "build": "cargo build",
+    "start": "cargo run"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "7.11.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "nodemon": "2.0.4",
+    "prettier": "2.1.2"
+  }
+}

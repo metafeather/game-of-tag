@@ -1,0 +1,11 @@
+# exclude everything
+*
+
+# build requirements
+!entrypoint.sh
+
+# common nested exclusions
+.git
+**/.git
+node_modules
+**/node_modules
