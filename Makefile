@@ -57,7 +57,7 @@ up:
 		-p 8080:8080 \
 	    --mount source=$(NAME).vscode-server,target=/tmp/.vscode-server \
 	    --mount source=$(NAME).node_modules,target=/tmp/node_modules \
-	    --mount type=bind,src=$(HOST_HOME)/Code,dst=/code \
+	    --mount type=bind,src=$(shell pwd),dst=/code \
 	    $(LATEST) keepalive
 
 .PHONY: logs

@@ -91,7 +91,7 @@ ENV USER node
 USER node
 
 # App setup
-WORKDIR /code/hash.ai/ha/game_of_tag
+WORKDIR /code
 
 # Make container execute npm tasks by default
 ENTRYPOINT ["npm", "run"]

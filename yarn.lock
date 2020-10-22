@@ -6524,8 +6524,8 @@ fsevents@~2.1.2:
 
 "wasm-game-of-tag@file:../pkg::locator=www%40workspace%3Awww":
   version: 0.1.0
-  resolution: "wasm-game-of-tag@file:../pkg#../pkg::hash=fb588c&locator=www%40workspace%3Awww"
-  checksum: a1d4fa33627e77d70565ab1e1c7996917d98a5654038b5c499a8db7b8079392092f1b3f553737427ace493f23daf257f198717b9cdcf2b3f521d25cabee051d2
+  resolution: "wasm-game-of-tag@file:../pkg#../pkg::hash=fedb72&locator=www%40workspace%3Awww"
+  checksum: 0037d8cc3cb2694318a329cf85e8fdb7a20c9299c0693b91eba8c0eb06c40db0493f95cd509647c6f1a984ed81127e4e5376da1bda6a10cc307047073246c664
   languageName: node
   linkType: hard
 

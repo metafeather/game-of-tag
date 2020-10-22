@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "ha/game_of_tag",
-      "path": "../game_of_tag"
+      "name": "game_of_tag",
+      "path": "."
     }
   ],
   "settings": {
