@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Game of Tag!</title>
+    <style>
+      body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        display: inline-block;
+      }
+      #fps {
+        white-space: pre;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Game of Tag!</h2>
+
+    <div>
+      Play/Pause: <button id="play-pause">⏸️</button> Step:
+      <button id="step">⏭️</button> Location of:
+      <span style="background-color: red">&nbsp;</span>
+      <output id="locationOutput"></output>
+    </div>
+    <canvas id="game-of-tag-canvas"></canvas>
+    <output id="fps"></output>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>

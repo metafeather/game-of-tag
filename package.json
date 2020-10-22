@@ -16,7 +16,8 @@
     "bin:build": "cargo build --bin main",
     "wasm:test": "wasm-pack test --headless --chrome -- --verbose",
     "wasm:build": "wasm-pack build && yarn workspace www install",
-    "wasm:start": "yarn workspace www start"
+    "wasm:start": "yarn workspace www start",
+    "wasm:release": "yarn workspace www build"
   },
   "workspaces": [
     "www"
