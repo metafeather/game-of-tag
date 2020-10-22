@@ -10,7 +10,7 @@
     "node_modules": "mkdir -p /tmp/node_modules && ln -sTf /tmp/node_modules ./node_modules",
     "clean": "rm -Rf ./node_modules/* ./node_modules/.* .yarn yarn.lock",
     "release": "cargo build --release",
-    "test": "cargo test",
+    "test": "cargo test -- --nocapture",
     "build": "cargo build",
     "start": "cargo run",
     "bin:build": "cargo build --bin main",

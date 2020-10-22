@@ -3,7 +3,8 @@ use game_of_tag::Universe;
 fn main() {
     println!("Hello Game of Tag!");
 
-    let universe = example_space();    
+    let mut universe = example_space();
+    universe.tick();
     println!("Universe");
     println!("{}", universe);
 }
