@@ -31,12 +31,12 @@ export default class {
     let mean = sum / this.frames.length;
 
     // Render the statistics.
-    this.fps.textContent = `
-  Frames per Second:
-           latest = ${Math.round(fps)}
-  avg of last 100 = ${Math.round(mean)}
-  min of last 100 = ${Math.round(min)}
-  max of last 100 = ${Math.round(max)}
+    this.fps.value = `
+Frames per Second: latest = ${Math.round(
+      fps
+    )} avg/min/max of last 100 ${Math.round(mean)} / ${Math.round(
+      min
+    )} / ${Math.round(max)}
   `.trim();
   }
 }

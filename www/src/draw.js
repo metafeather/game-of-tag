@@ -30,7 +30,7 @@ export const drawGrid = ({ctx, universe, CELL_SIZE}) => {
   ctx.stroke();
 };
 
-export const drawCells = ({ctx, universe, CELL_SIZE, memory, Cell}) => {
+export const drawCells = ({ctx, universe, CELL_SIZE, memory, Cell, el}) => {
   const width = universe.width();
   const height = universe.height();
 
@@ -54,6 +54,9 @@ export const drawCells = ({ctx, universe, CELL_SIZE, memory, Cell}) => {
         CELL_SIZE,
         CELL_SIZE
       );
+
+      // Display location of Tagged Cell
+      el.value = `(${row + 1}, ${col + 1})`;
     }
   }
 

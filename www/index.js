@@ -18,6 +18,8 @@ canvas.width = (CELL_SIZE + 1) * width + 1;
 const ctx = canvas.getContext('2d');
 
 const playPauseButton = document.getElementById('play-pause');
+const stepButton = document.getElementById('step');
+const locationOutput = document.getElementById('locationOutput');
 const fps = new Fps({el: document.getElementById('fps')});
 
 let animationId = null;
@@ -26,7 +28,7 @@ const renderLoop = () => {
   fps.render();
 
   drawGrid({ctx, universe, CELL_SIZE});
-  drawCells({ctx, universe, CELL_SIZE, memory, Cell});
+  drawCells({ctx, universe, CELL_SIZE, memory, Cell, el: locationOutput});
 
   for (let i = 0; i < 9; i++) {
     universe.tick();
@@ -39,11 +41,11 @@ const isPaused = () => {
   return animationId === null;
 };
 const play = () => {
-  playPauseButton.textContent = '⏸';
+  playPauseButton.textContent = '⏸️';
   renderLoop();
 };
 const pause = () => {
-  playPauseButton.textContent = '▶';
+  playPauseButton.textContent = '⏯';
   cancelAnimationFrame(animationId);
   animationId = null;
 };
@@ -53,6 +55,11 @@ playPauseButton.addEventListener('click', (event) => {
   } else {
     pause();
   }
+});
+stepButton.addEventListener('click', (event) => {
+  pause();
+  play();
+  pause();
 });
 
 canvas.addEventListener('click', (event) => {
