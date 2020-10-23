@@ -242,6 +242,17 @@ impl Universe {
 
 impl fmt::Display for Universe {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "[\n")?;
+        for line in self.cells.as_slice().chunks(self.width as usize) {
+            write!(f, "  {:?},\n", line)?;
+        }
+        write!(f, "]\n")?;
+        Ok(())
+    }
+}
+
+impl fmt::Debug for Universe {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for line in self.cells.as_slice().chunks(self.width as usize) {
             for &cell in line {
                 let symbol = match cell {
