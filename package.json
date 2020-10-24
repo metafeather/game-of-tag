@@ -17,9 +17,9 @@
     "bin:build": "cargo build --bin main",
     "wasm:clean": "rm -Rf pkg",
     "wasm:test": "wasm-pack test --headless --chrome -- --verbose",
-    "wasm:build": "wasm-pack build && yarn workspace www install",
+    "wasm:build": "rm -Rf ./pkg && wasm-pack build && yarn workspace www install",
     "wasm:start": "yarn workspace www start",
-    "wasm:release": "yarn workspace www build"
+    "wasm:release": "yarn workspace www build && rm -Rf ./docs && cp -R ./www/dist ./docs"
   },
   "workspaces": [
     "www"

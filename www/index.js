@@ -24,25 +24,25 @@ const fps = new Fps({el: document.getElementById('fps')});
 
 let animationId = null;
 
-const renderLoop = () => {
+const renderLoop = (n = 10) => {
   fps.render();
 
   drawGrid({ctx, universe, CELL_SIZE});
   drawCells({ctx, universe, CELL_SIZE, memory, Cell, el: locationOutput});
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < n; i++) {
     universe.tick();
   }
 
-  animationId = requestAnimationFrame(renderLoop);
+  animationId = requestAnimationFrame(() => renderLoop(n));
 };
 
 const isPaused = () => {
   return animationId === null;
 };
-const play = () => {
+const play = (n = 10) => {
   playPauseButton.textContent = '⏸️';
-  renderLoop();
+  renderLoop(n);
 };
 const pause = () => {
   playPauseButton.textContent = '⏯';
@@ -58,7 +58,7 @@ playPauseButton.addEventListener('click', (event) => {
 });
 stepButton.addEventListener('click', (event) => {
   pause();
-  play();
+  play(1);
   pause();
 });
 

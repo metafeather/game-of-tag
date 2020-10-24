@@ -2,7 +2,7 @@ const GRID_COLOR = '#ccc';
 const EMPTY_COLOR = '#fff';
 const ACTIVE_COLOR = '#787878';
 const ISTAGGED_COLOR = '#f00';
-const WASTAGGED_COLOR = '#7a1ce6';
+const WASTAGGED_COLOR = '#0f0';
 
 export const getIndex = (row, column, {width}) => {
   return row * width + column;
